@@ -37,15 +37,15 @@ Make sure you use Anypoint Studio 7 and Mule 4.
  * Query Params: country, ageGroup, worldRank
  * Resources: resources/endpoints/employee/employee.sql
  * Query Details: 
-	age_group: 
-		age between 18 and 21 = A
-		age between 22 and 25 = B
-		age between 26 and 29 = C
-		age greater than 29   = D
-		otherwise             = ?		
-	country_rank: ordinal position of the employee according to his/her salary in comparison to other employee's salary on the same country
-	country_salary_percent: % of the employee salary in comparison to the sum of all employee's salary on the same country (format: 2 decimals + %)
-	world_rank: ordinal position of the employee according to his/her salary over the whole database  
+	* age_group: 
+		* age between 18 and 21 = A
+		* age between 22 and 25 = B
+		* age between 26 and 29 = C
+		* age greater than 29   = D
+		* otherwise             = ?		
+	* country_rank: ordinal position of the employee according to his/her salary in comparison to other employee's salary on the same country
+	* country_salary_percent: % of the employee salary in comparison to the sum of all employee's salary on the same country (format: 2 decimals + %)
+	* world_rank: ordinal position of the employee according to his/her salary over the whole database  
  * In-Memory Database: http://www.h2database.com/html/main.html
  * Tip: INIT statement may be useful in a jdbc connection url
 
