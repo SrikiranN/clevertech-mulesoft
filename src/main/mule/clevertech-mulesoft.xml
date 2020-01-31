@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:java="http://www.mulesoft.org/schema/mule/java"
+	xmlns:db="http://www.mulesoft.org/schema/mule/db"
+	xmlns:wsc="http://www.mulesoft.org/schema/mule/wsc"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd 
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd 
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd 
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/wsc http://www.mulesoft.org/schema/mule/wsc/current/mule-wsc.xsd
+http://www.mulesoft.org/schema/mule/java http://www.mulesoft.org/schema/mule/java/current/mule-java.xsd">
+	
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="6fd1a063-7523-4d99-a9f5-bf388c57d9a9" basePath="api">
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	
+	
+		
+	<flow name="countryFlow" doc:id="e378d5a6-6b47-44fe-ba77-6418fb268e32" >
+		<http:listener doc:name="Listener" doc:id="6c7d7e50-3df2-4641-bb62-bdf000751b7a" config-ref="HTTP_Listener_config" path="country"/>
+		<set-payload value="Implement me" doc:name="Set Payload" doc:id="865cdd2e-4443-40cf-acf8-61d920ef43c9" />	
+	</flow>
+	
+	
+	<flow name="currencyFlow" doc:id="e23c6991-1f5c-4ad2-8890-4685261b1393" >
+		<http:listener doc:name="Listener" doc:id="cda2a524-15ab-45ce-ac29-a9d6f47c2511" config-ref="HTTP_Listener_config" path="currency" allowedMethods="GET"/>
+		<set-payload value="Implement me" doc:name="Set Payload" doc:id="b5cf3bad-3c2e-4db5-9fe1-4f9ecae1683c" />
+	</flow>
+	
+	
+	<flow name="employeeFlow" doc:id="2f67f2a4-a324-4e3e-acbd-c51e05c941cf" >
+		<http:listener doc:name="Listener" doc:id="60a4687d-0521-4f5d-9e16-ce3641f7a103" config-ref="HTTP_Listener_config" path="employee" allowedMethods="GET"/>
+		<set-payload value="Implement me" doc:name="Set Payload" doc:id="659b6755-ba42-41ee-a74c-dc6e12ae1510" />
+	</flow>
+
+	
+	<flow name="sortFlow" doc:id="24d9291f-7e3c-45d6-a758-b885ad6d1991" >
+		<http:listener doc:name="Listener" doc:id="5f15b710-b37f-4b05-9116-090a13b7b5f3" config-ref="HTTP_Listener_config" path="sort" allowedMethods="GET"/>
+		<set-payload value="Implement me" doc:name="Set Payload" doc:id="e54b255b-5379-48a8-9335-99538477341d" />					
+	</flow>	
+	
+</mule>

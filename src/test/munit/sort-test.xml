@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+		
+	<munit:config name="sort-test.xml" />
+	
+	<munit:test name="test-sortFlowTest-Match" doc:id="64d18f60-330e-428c-8556-d9fb1c38f46f" description="Test">
+		<munit:execution >
+			<munit:set-event doc:name="Set Event" doc:id="3574faaa-41c6-46a8-9b5c-69292c3feaef" >
+				<munit:attributes value="#[{queryParams : {'inputArray':'30,-8,0,957,218,685,59812,-986'}}]" />
+
+			</munit:set-event>		
+			<flow-ref doc:name="Flow-ref to sortFlow" doc:id="0ab996b4-fe82-4325-88a8-658f7cf806a4" name="sortFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-equals doc:name="Assert equals" doc:id="819918cc-102f-46df-b6d4-fd39bc5dda08" actual="#[payload]" expected='#[{
+  "status": "Success",
+  "result": [
+    -986,
+    -8,
+    0,
+    30,
+    218,
+    685,
+    957,
+    59812
+  ]
+}]'/>
+		</munit:validation>
+	</munit:test>
+	
+	<munit:test name="test-sortFlowTest-Error" doc:id="d576583b-d21f-4e04-935f-539a9249c476" description="Test">
+		<munit:execution >
+			<munit:set-event doc:name="Set Event" doc:id="2f4c3f16-fe09-4e4b-827a-73e004a7f55a" >
+				<munit:attributes value="#[{queryParams : {'inputArray':'30,-8,0,957,218,685,59812,-986,a'}}]" />
+
+			</munit:set-event>		
+			<flow-ref doc:name="Flow-ref to sortFlow" doc:id="ec475e0f-e723-4276-9c26-ad30c893c10a" name="sortFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-equals doc:name="Assert equals" doc:id="d76697c2-5990-46b2-b61b-8812395de4df" actual="#[payload]" expected="#[{
+  &quot;status&quot;: &quot;Error&quot;,
+  &quot;result&quot;: &quot;30,-8,0,957,218,685,59812,-986,a&quot;,
+  &quot;message&quot;: &quot;Invocation of static Method 'sort(java.lang.String)' from Class 'biz.clevertech.mulesoft.SortUtil' with arguments [java.lang.String arg0] resulted in an error.\nExpected arguments are [java.lang.String arg0].\nCause: java.lang.NumberFormatException - For input string: \&quot;a\&quot;&quot;
+}]"/>
+		</munit:validation>
+	</munit:test>	
+
+</mule>

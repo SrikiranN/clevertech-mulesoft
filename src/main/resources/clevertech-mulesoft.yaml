@@ -1,0 +1,18 @@
+### MULE APP PARAMETERS ###
+app:
+  httpListener:
+    port: "8081"
+    basePath: "api"
+
+### MULE APP PARAMETERS ###
+endpoints:
+  country:
+    file: ""
+    httpRequest:
+      host: "restcountries.eu"  
+#  currency:
+  employee:
+    database:
+      url: ""
+      driverClassName: ""
+#  sort:
