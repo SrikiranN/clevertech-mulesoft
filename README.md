@@ -1,6 +1,6 @@
 # MuleSoft challenge
 
-This challenge consists of implementing the incomplete flows in the project.
+This challenge consists of implementing the incomplete flows in the project and adjust the project to meet best practices.
 Both have to be created in the same project using Anypoint Studio, the IDE for Mule ESB (https://developer.mulesoft.com/). 
 You can download it from https://www.mulesoft.com/lp/dl/studio. 
 Make sure you use Anypoint Studio 7 and Mule 4.
@@ -8,6 +8,7 @@ Make sure you use Anypoint Studio 7 and Mule 4.
 # Tips
 * Explore the MUnit flows as these will help validate your implementation.
 * Feel free to adjust the project to meet best practices and standards to take the most out of the MuleSoft components.
+* RAML/APIToolKit, Error handling, Metadata, Logs, MUnit will be considered as part of the final score.
 
 # Format
 * This assessment must be delivered within 2 days.
