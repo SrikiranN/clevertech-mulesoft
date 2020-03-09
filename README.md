@@ -15,6 +15,7 @@ Make sure you use Anypoint Studio 7 and Mule 4.
 * If you wish, you can provide a IMPL.txt (plain text) or a IMPL.md (Markdown) file at the root of your repository, explaining:
     * Any comments regarding your implementation.
     * Mention anything that was asked but not delivered and why.
+* Assessment goes around the success of the MUnit tests and then a manual review takes place. Make sure your packed code compiles.
 * Any questions, please send an email to your recruiter.
 
 ### Flows ###
