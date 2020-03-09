@@ -6,7 +6,7 @@ You can download it from https://www.mulesoft.com/lp/dl/studio.
 Make sure you use Anypoint Studio 7 and Mule 4.
 
 # Tips
-* Explore the MUnit flows as these will help validate your implementation.
+* Explore the MUnit flows as these will help validate your implementation (E.g: Input and Output data).
 * Feel free to adjust the project to meet best practices and standards to take the most out of the MuleSoft components.
 * RAML/APIToolKit, Error handling, Metadata, Logs, MUnit will be considered as part of the final score.
 
