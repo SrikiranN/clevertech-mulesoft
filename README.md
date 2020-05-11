@@ -16,6 +16,7 @@ Make sure you use Anypoint Studio 7 and Mule 4.
     * Any comments regarding your implementation.
     * Mention anything that was asked but not delivered and why.
 * Assessment goes around the success of the MUnit tests and then a manual review takes place. Make sure your packed code compiles.
+* Deliver the project as a JAR file and make sure it can be open in Anypoint Studio with no issues
 * Any questions, please send an email to your recruiter.
 
 ### Flows ###
